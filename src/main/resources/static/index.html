@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Camera Test Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmpeg/0.1/jsmpg.js"></script>
+</head>
+<body>
+<h1>
+    Test Page
+</h1>
+<!-- 첫 번째 캔버스 -->
+<canvas id="canvas1"></canvas>
+<!-- 두 번째 캔버스 추가 -->
+<br/>
+<canvas id="canvas2"></canvas>
+
+<script>
+    var client1 = new WebSocket("ws://tongtong.tplinkdns.com:60003");
+    var canvas1 = document.querySelector("#canvas1");
+    var player1 = new jsmpeg(client1, {
+        canvas: canvas1,
+    });
+</script>
+</body>
+</html>
